@@ -12,8 +12,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // SECTION: GET route for homepage
+app.get('/', (req, res) => {
+res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // SECTION: GET route for notes page
+app.get('/notes', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'notes.html'));
+  });
 
 // SECTION: LISTEN on port
 
