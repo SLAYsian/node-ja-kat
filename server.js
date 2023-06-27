@@ -23,6 +23,12 @@ app.get('/notes', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/notes.html'));
   });
 
+
+  // SECTION: Wildcard route to direct to homepage
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+  });
+
 // SECTION: LISTEN on port
 
 app.listen(PORT, () =>
