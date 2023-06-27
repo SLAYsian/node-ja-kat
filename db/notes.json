@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Test Title",
+        "text": "Test text"
+    },
+    {
+        "title": "Test Title 2",
+        "text": "Test note 2",
+        "note_id": "6425ee0d-2c56-4052-a033-76937ea25f52"
+    },
+    {
+        "title": "./routes/notes.js file",
+        "text": "Add get, post, patch and delete functionality",
+        "note_id": "37bdef0a-85f6-4181-93ec-648309b5774e"
+    }
+]
