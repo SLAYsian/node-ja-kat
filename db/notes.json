@@ -12,5 +12,10 @@
         "title": "./routes/notes.js file",
         "text": "Add get, post, patch and delete functionality",
         "note_id": "37bdef0a-85f6-4181-93ec-648309b5774e"
+    },
+    {
+        "title": "Note Viewing Error",
+        "text": "Troubleshoot error when viewing individual notes",
+        "id": "3ae13657-82d3-405e-a185-cb8970fed0bd"
     }
 ]

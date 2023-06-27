@@ -10,6 +10,17 @@ notes.get('/', (req, res) => {
   ))
 });
 
+// SECTION: GET route for retrieving note by id
+notes.get('/:id', (req, res) => {
+  const noteId = req.params.id;
+  readFromFile(path.join(__dirname, '../db/notes.json'))
+  .then((data) => JSON.parse(data))
+  .then((json) => {
+    const result = json.filter((note) => note.id === noteId);
+    return result.length > 0 ? res.json(result) : res.json('Error: No note found');
+  });
+});
+
 // SECTION: POST Route for submitting notes
 notes.post('/', (req, res) => {
 console.log(req.body);
@@ -18,7 +29,7 @@ if(req.body){
   const newNote = {
     title,
     text,
-    note_id: uuidv4(),
+    id: uuidv4(),
   };
   readAndAppend(newNote, path.join(__dirname, '../db/notes.json'));
   res.json('Note added successfully!')
