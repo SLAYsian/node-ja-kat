@@ -39,6 +39,17 @@ if(req.body){
 });
 
 // SECTION: DELETE Route for deleting notes
+notes.delete('/:id', (req, res) => {
+  const noteId = req.params.id;
+  const noteTitle = req.params.title;
+  readFromFile(path.join(__dirname, '../db/notes.json'))
+  .then((data) => JSON.parse(data))
+  .then((json) => {
+    const result = json.filter((note) => note.id !== noteId);
+    writeToFile(path.join(__dirname, '../db/notes.json'), result);
+    res.json('Your note has been deleted!');
+  });
+});
 
 // SECTION: Export route
 module.exports = notes
